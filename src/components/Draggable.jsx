@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react';
+import { useState } from "react";
 
-const Draggable = ({ children }) => {
-  const dragRef = useRef(null);
+const Draggable = ({ children, index }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -41,7 +40,7 @@ const Draggable = ({ children }) => {
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
       >
-        Title Bar
+        Title Bar {index !== 0 ? `(after click  ${index})` : ""}
       </div>
       <div className="content">{children}</div>
     </div>

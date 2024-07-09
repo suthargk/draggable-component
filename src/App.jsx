@@ -5,12 +5,12 @@ import Draggable from './components/Draggable';
 
 function App() {
   const [draggables, setDraggables] = useState([
-    <Draggable key={0}>Initial Child</Draggable>,
+    <Draggable key={0} index={0}>Initial Child</Draggable>,
   ]);
 
   const addParent = () => {
     const newDraggable = (
-      <Draggable key={draggables.length}>
+      <Draggable key={draggables.length} index={draggables.length}>
         {draggables[draggables.length - 1]}
       </Draggable>
     );
